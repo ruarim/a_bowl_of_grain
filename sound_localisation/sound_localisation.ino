@@ -94,6 +94,7 @@ void loop() {
 
     refMic = minIndex(arrivalTimes);
 
+    // MAKE SURE MICS ARE ORDERED CORRECTLY!!!!
     for (int i = 0; i < numMics; i++) {
 
       output += getDoA(arrivalTimes[refMic], arrivalTimes[i]);
