@@ -46,12 +46,13 @@ int minIndex(unsigned long arr[numMics]) {
 String getMicData() {
   String data = "";
   closestMic = minIndex(arrivalTimes);
-  data += String(closestMic) + "_" + micLevel[closestMic];
+  data += String(micLevel[closestMic]) + "_" + String(closestMic + 1);
 
   // Reset times and detected flags for the next detection
   for (int i = 0; i < numMics; i++) {
     detected[i] = false;
     arrivalTimes[i] = 0;
+    micLevel[i] = 0;
   }
 
   return data;
@@ -89,7 +90,7 @@ void debug() {
 }
 
 void setup() {
-  Serial.begin(38400);
+  Serial.begin(9600);
 
   // Set registers - Always required
   imu.setup();
@@ -101,6 +102,7 @@ void setup() {
     pinMode(micPins[i], INPUT);
     detected[i] = false;
     arrivalTimes[i] = 0;
+    micLevel[i] = 0;
   }
 }
 
@@ -122,10 +124,11 @@ void loop() {
   output = getAccelData();
 
   if (allDetected) {
-    // debug();
-    output += getMicData();
+    output += "_" + getMicData();
     // Add a small delay to allow for processing and to avoid immediate re-triggering
     delay(100);
+  }else{
+    output += + "_" + String(0) + "_" + String(0);
   }
   Serial.println(output);
 }
