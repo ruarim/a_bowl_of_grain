@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 1612.0, 865.0 ],
+		"rect" : [ 34.0, 88.0, 1612.0, 865.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,123 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"lastchannelcount" : 1,
+					"maxclass" : "mc.live.gain~",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"orientation" : 1,
+					"outlettype" : [ "multichannelsignal", "", "float", "list" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 544.0, 1011.956608653068542, 136.0, 41.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_longname" : "mc.live.gain~[2]",
+							"parameter_mmax" : 6.0,
+							"parameter_mmin" : -70.0,
+							"parameter_shortname" : "mc.live.gain~",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 4
+						}
+
+					}
+,
+					"varname" : "mc.live.gain~[2]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 368.0, 262.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-24",
+					"maxclass" : "gain~",
+					"multichannelvariant" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "multichannelsignal", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 40.0, 1102.0, 185.0, 33.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 704.5, 959.956608653068542, 97.0, 22.0 ],
+					"text" : "mc.s~ audio_out"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-21",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 639.5, 665.023169279098511, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 639.5, 634.0, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-47",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "multichannelsignal" ],
+					"patching_rect" : [ 1110.146289348602295, 114.234694004058838, 75.0, 22.0 ],
+					"text" : "mc.r~ grains"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 766.0, 833.456608653068542, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-245",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 639.5, 777.456608653068542, 63.0, 33.0 ],
+					"patching_rect" : [ 639.5, 777.456608653068542, 65.0, 33.0 ],
 					"text" : "Add delay dry/wet"
 				}
 
@@ -97,6 +208,50 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "toggle",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 55.0, 70.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 55.0, 38.976830720901489, 58.0, 22.0 ],
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "preset",
+									"numinlets" : 1,
+									"numoutlets" : 5,
+									"outlettype" : [ "preset", "int", "preset", "int", "" ],
+									"patching_rect" : [ 161.0, 265.0, 100.0, 40.0 ],
+									"preset_data" : [ 										{
+											"number" : 1,
+											"data" : [ 5, "obj-13", "flonum", "float", 0.899999976158142, 5, "obj-15", "flonum", "float", 250.0, 5, "obj-19", "flonum", "float", 0.200000002980232, 5, "obj-23", "flonum", "float", 0.300000011920929, 5, "obj-3", "toggle", "int", 1 ]
+										}
+, 										{
+											"number" : 2,
+											"data" : [ 5, "obj-13", "flonum", "float", 0.899999976158142, 5, "obj-15", "flonum", "float", 250.0, 5, "obj-19", "flonum", "float", 0.200000002980232, 5, "obj-23", "flonum", "float", 0.300000011920929, 5, "obj-3", "toggle", "int", 1 ]
+										}
+ ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"comment" : "sustained_signal",
 									"id" : "obj-4",
@@ -155,7 +310,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 437.0, 117.0, 115.0, 64.0 ],
+									"patching_rect" : [ 437.0, 117.0, 116.0, 64.0 ],
 									"text" : "The mix of random panning to maintaining the stereo field."
 								}
 
@@ -181,7 +336,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 212.0, 62.0, 115.0, 37.0 ],
+									"patching_rect" : [ 212.0, 62.0, 117.0, 37.0 ],
 									"text" : "The size of each grain in ms"
 								}
 
@@ -335,6 +490,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-14", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
 									"source" : [ "obj-15", 0 ]
 								}
@@ -372,6 +534,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-21", 0 ],
 									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-3", 0 ]
 								}
 
 							}
@@ -616,19 +785,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 968.0, 827.456608653068542, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-207",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 894.0, 827.456608653068542, 50.0, 22.0 ]
+					"patching_rect" : [ 828.0, 833.456608653068542, 50.0, 22.0 ]
 				}
 
 			}
@@ -675,19 +832,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "multichannelsignal" ],
-					"patching_rect" : [ 40.0, 1081.0, 152.0, 22.0 ],
+					"patching_rect" : [ 40.0, 1071.0, 152.0, 22.0 ],
 					"text" : "mc.r~ audio_out @chans 2"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-175",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 704.5, 927.956608653068542, 97.0, 22.0 ],
-					"text" : "mc.s~ audio_out"
 				}
 
 			}
@@ -820,7 +966,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 135.0, 234.0, 50.0, 22.0 ],
-					"text" : "0.05"
+					"text" : "0.06"
 				}
 
 			}
@@ -906,7 +1052,7 @@
 					"numinlets" : 6,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 766.0, 827.456608653068542, 114.0, 22.0 ],
+					"patching_rect" : [ 766.0, 786.956608653068542, 114.0, 22.0 ],
 					"text" : "scale -1 1 10 10000"
 				}
 
@@ -918,7 +1064,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 766.0, 785.456608653068542, 41.0, 22.0 ],
+					"patching_rect" : [ 766.0, 744.956608653068542, 41.0, 22.0 ],
 					"text" : "r ac_y"
 				}
 
@@ -966,7 +1112,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 28.5, 330.000022768974304, 135.0, 20.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Start here - Presets"
 				}
 
@@ -1023,6 +1168,14 @@
 							"number" : 11,
 							"data" : [ 5, "obj-17", "radiogroup", "int", 3, 5, "obj-7", "number", "int", 0, 5, "obj-19", "mc.live.gain~", "float", 0.0, 5, "obj-1", "toggle", "int", 1, 6, "obj-3", "kslider", "chord", 74, 39, 5, "obj-197", "flonum", "float", 0.740000009536743, 5, "obj-195", "flonum", "float", 150.0, 5, "obj-192", "toggle", "int", 1, 5, "obj-76", "flonum", "float", 40.0, 5, "obj-77", "flonum", "float", 10.0, 5, "obj-83", "flonum", "float", 0.200000002980232, 5, "obj-84", "flonum", "float", 0.632352948188782, 5, "obj-188", "mc.live.gain~", "float", -6.652889728546143 ]
 						}
+, 						{
+							"number" : 12,
+							"data" : [ 5, "obj-17", "radiogroup", "int", 3, 5, "obj-7", "number", "int", 0, 5, "obj-19", "mc.live.gain~", "float", 0.0, 5, "obj-1", "toggle", "int", 1, 5, "obj-197", "flonum", "float", 0.740000009536743, 5, "obj-195", "flonum", "float", 150.0, 5, "obj-192", "toggle", "int", 1, 5, "obj-76", "flonum", "float", 40.0, 5, "obj-77", "flonum", "float", 10.0, 5, "obj-83", "flonum", "float", 0.5, 5, "obj-84", "flonum", "float", 0.190452262759209, 5, "obj-188", "mc.live.gain~", "float", -6.652889728546143, 5, "obj-115", "mc.live.gain~", "float", 0.0, 5, "obj-200", "flonum", "float", 10.0, 5, "obj-211", "flonum", "float", 0.0, 6, "obj-212", "pictslider", "list", 0, 0, 5, "obj-5", "number", "int", 4955, 5, "<invalid>", "mc.live.gain~", "float", 0.0, 5, "obj-21", "toggle", "int", 1, 6, "obj-24", "gain~", "list", 157, 10.0 ]
+						}
+, 						{
+							"number" : 13,
+							"data" : [ 5, "obj-17", "radiogroup", "int", 3, 5, "obj-7", "number", "int", 0, 5, "obj-19", "mc.live.gain~", "float", 0.0, 5, "obj-1", "toggle", "int", 1, 5, "obj-197", "flonum", "float", 0.740000009536743, 5, "obj-195", "flonum", "float", 150.0, 5, "obj-192", "toggle", "int", 1, 5, "obj-76", "flonum", "float", 40.0, 5, "obj-77", "flonum", "float", 10.0, 5, "obj-83", "flonum", "float", 0.540000021457672, 5, "obj-84", "flonum", "float", 0.226633161306381, 5, "obj-188", "mc.live.gain~", "float", -6.652889728546143, 5, "obj-115", "mc.live.gain~", "float", 0.0, 5, "obj-200", "flonum", "float", 0.200000002980232, 5, "obj-211", "flonum", "float", 0.0, 6, "obj-212", "pictslider", "list", 80, 47, 5, "obj-5", "number", "int", 5354, 5, "obj-21", "toggle", "int", 1, 6, "obj-24", "gain~", "list", 157, 10.0, 5, "obj-2", "mc.live.gain~", "float", 0.0 ]
+						}
  ]
 				}
 
@@ -1072,7 +1225,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 105.0, 748.956608653068542, 163.0, 64.0 ],
-					"presentation_linecount" : 4,
 					"text" : "Sets the period of the grain clock in ms. This determines the grain size as well as speed."
 				}
 
@@ -1589,7 +1741,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 89.0, 833.956608653068542, 237.0, 37.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Most grainflow parameters will work in conjunction with the synth"
 				}
 
@@ -1666,7 +1817,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 356.0, 756.956608653068542, 219.0, 37.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Without update, they will update in accordance to the autoUpdate state"
 				}
 
@@ -1705,7 +1855,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 356.5, 685.956608653068542, 188.0, 37.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Messages prepended by update will update in all voices"
 				}
 
@@ -1731,7 +1880,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 235.5, 510.956608653068542, 357.0, 51.0 ],
-					"presentation_linecount" : 3,
 					"text" : "By default, new parameters are triggered when a new voice is set.  If you use autoUpdate, the parameters on all grain will update as they change"
 				}
 
@@ -1939,7 +2087,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 73.5, 697.956608653068542, 215.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Midi notes set the rate by transposing based on midi note 60",
 					"textcolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ]
 				}
@@ -1991,7 +2138,7 @@
 					"maxclass" : "mc.ezdac~",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 40.0, 1126.956608653068542, 45.0, 45.0 ]
+					"patching_rect" : [ 40.0, 1148.956608653068542, 45.0, 45.0 ]
 				}
 
 			}
@@ -2215,7 +2362,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 205.0, 340.0, 150.0, 33.0 ],
-									"presentation_linecount" : 2,
 									"text" : "testing frequcy of mic location"
 								}
 
@@ -2241,7 +2387,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 451.5, 242.0, 50.0, 22.0 ],
-									"text" : "60"
+									"text" : "819"
 								}
 
 							}
@@ -2253,7 +2399,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 305.0, 242.0, 50.0, 22.0 ],
-									"text" : "68"
+									"text" : "21"
 								}
 
 							}
@@ -2265,7 +2411,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 161.0, 242.0, 50.0, 22.0 ],
-									"text" : "124"
+									"text" : "6"
 								}
 
 							}
@@ -2277,7 +2423,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 24.0, 235.0, 50.0, 22.0 ],
-									"text" : "308"
+									"text" : "54"
 								}
 
 							}
@@ -2664,8 +2810,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 273.625, 190.785714149475098, 159.0, 23.0 ],
-					"text" : "if $i1 < 10 then less else 0"
+					"patching_rect" : [ 273.625, 190.785714149475098, 152.0, 23.0 ],
+					"text" : "if $i1 < 1 then less else 0"
 				}
 
 			}
@@ -2729,6 +2875,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "closest_mic",
@@ -2881,8 +3028,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "int", "" ],
-									"patching_rect" : [ 28.0, 114.0, 74.0, 22.0 ],
-									"text" : "serial f 9600"
+									"patching_rect" : [ 28.0, 114.0, 77.0, 22.0 ],
+									"text" : "serial b 9600"
 								}
 
 							}
@@ -3095,11 +3242,12 @@
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 1,
 					"id" : "obj-41",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1091.0, 627.0, 150.0, 20.0 ],
+					"patching_rect" : [ 1091.0, 627.0, 158.0, 20.0 ],
 					"text" : "Generative Ideas"
 				}
 
@@ -3107,12 +3255,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-38",
-					"linecount" : 16,
+					"linecount" : 18,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1091.0, 649.0, 150.0, 221.0 ],
-					"text" : "X number of grain in a window of time adds a bass note? even more add both bass and treble notes\n\nUse  counter to track total number of grains\n-at certains values add lower and lower notes to the sound.\nThen also start remove them \n\nShake on and off a long dub delay"
+					"patching_rect" : [ 1091.0, 649.0, 165.0, 248.0 ],
+					"text" : "X number of grain in a window of time adds a bass note? even more add both bass and treble notes\n-Chord gets more complex  with more grains triggering\n\nOR \n\nUse  counter to track total number of grains\n-at certains values add lower and lower notes to the sound.\nThen also start remove them \n\nShake on and off a long dub delay"
 				}
 
 			}
@@ -5019,18 +5167,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-47",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "multichannelsignal" ],
-					"patching_rect" : [ 1110.146289348602295, 114.234694004058838, 75.0, 22.0 ],
-					"text" : "mc.r~ grains"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-46",
 					"maxclass" : "newobj",
 					"numinlets" : 3,
@@ -6004,36 +6140,6 @@
 				}
 
 			}
-, 			{
-				"box" : 				{
-					"border" : 0,
-					"embedstate" : [ [ "grainColor", 1, 1, 0 ], [ "bgColor", 0.5, 0.5, 0.5 ], [ "drawCenter", 0 ] ],
-					"filename" : "grainflow.spatview~.js",
-					"id" : "obj-231",
-					"maxclass" : "jsui",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 1172.0, 908.956608653068542, 150.0, 60.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"border" : 0,
-					"embedstate" : [ [ "pointLimit", 0 ], [ "clipRange", 1 ], [ "trackerSize", 1 ], [ "bgColor", 1, 1, 1, 0 ], [ "dotTextColor", 1, 1, 1, 1 ], [ "trackerColor", 0.5, 0, 0, 1 ], [ "selectColor", 0.5, 0.5, 0.5, 1 ], [ "lineThickness", 1 ], [ "points", 0.135, 0.195, 0.95, 0.205, 0.555, 0.87 ], [ "color", 0, 0, 0, 1 ], [ "autoOutput", 0 ], [ "dotSize", 1 ] ],
-					"filename" : "grainflow.function2D.js",
-					"id" : "obj-234",
-					"maxclass" : "jsui",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 1188.147990882396698, 1018.0, 200.0, 200.0 ]
-				}
-
-			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -6051,7 +6157,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-175", 0 ],
+					"destination" : [ "obj-23", 0 ],
 					"source" : [ "obj-103", 0 ]
 				}
 
@@ -6124,6 +6230,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-125", 0 ],
 					"source" : [ "obj-131", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 0 ],
+					"source" : [ "obj-14", 0 ]
 				}
 
 			}
@@ -6252,7 +6365,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-194", 0 ],
+					"destination" : [ "obj-24", 0 ],
 					"source" : [ "obj-182", 0 ]
 				}
 
@@ -6337,16 +6450,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-103", 1 ],
-					"midpoints" : [ 903.5, 863.956608653068542, 775.5, 863.956608653068542 ],
-					"source" : [ "obj-207", 0 ]
+					"destination" : [ "obj-174", 0 ],
+					"source" : [ "obj-21", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-103", 2 ],
-					"midpoints" : [ 977.5, 863.956608653068542, 837.0, 863.956608653068542 ],
+					"midpoints" : [ 837.5, 863.956608653068542, 837.0, 863.956608653068542 ],
 					"source" : [ "obj-211", 0 ]
 				}
 
@@ -6397,6 +6509,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-241", 0 ],
 					"source" : [ "obj-239", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-194", 0 ],
+					"source" : [ "obj-24", 0 ]
 				}
 
 			}
@@ -6545,8 +6664,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-46", 0 ],
-					"source" : [ "obj-47", 0 ]
+					"destination" : [ "obj-103", 1 ],
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}
@@ -6592,6 +6711,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-59", 0 ],
+					"order" : 1,
+					"source" : [ "obj-56", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"order" : 0,
 					"source" : [ "obj-56", 0 ]
 				}
 
@@ -6727,7 +6855,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-103", 1 ],
+					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-99", 0 ]
 				}
 
@@ -6737,6 +6865,7 @@
 			"obj-115" : [ "mc.live.gain~[4]", "mc.live.gain~", 0 ],
 			"obj-188" : [ "mc.live.gain~[1]", "mc.live.gain~", 0 ],
 			"obj-19" : [ "mc.live.gain~", "mc.live.gain~", 0 ],
+			"obj-2" : [ "mc.live.gain~[2]", "mc.live.gain~", 0 ],
 			"obj-6::obj-35" : [ "A", "A", 0 ],
 			"obj-6::obj-36" : [ "D", "D", 0 ],
 			"obj-6::obj-37" : [ "S", "S", 0 ],
@@ -6796,24 +6925,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "grainflow.function2D.js",
-				"bootpath" : "~/Documents/Max 8/Packages/Grainflow/jsui",
-				"patcherrelativepath" : "../../../Max 8/Packages/Grainflow/jsui",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "grainflow.record.gendsp",
 				"bootpath" : "~/Documents/Max 8/Packages/Grainflow/code",
 				"patcherrelativepath" : "../../../Max 8/Packages/Grainflow/code",
 				"type" : "gDSP",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "grainflow.spatview~.js",
-				"bootpath" : "~/Documents/Max 8/Packages/Grainflow/jsui",
-				"patcherrelativepath" : "../../../Max 8/Packages/Grainflow/jsui",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{

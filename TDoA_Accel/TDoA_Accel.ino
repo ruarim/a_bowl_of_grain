@@ -8,7 +8,7 @@ const int micPins[] = { A0, A1, A2, A3 };
 const int numMics = 4;
 int closestMic = 0;
 // Threshold for sound detection
-const int threshold = 10;
+const int threshold = 5;
 // Times of arrival
 unsigned long arrivalTimes[numMics];
 // Microphone amplitude
@@ -112,23 +112,10 @@ void loop() {
     checkMicrophone(micPins[i], i);
   }
 
-  // Check if all microphones have detected the sound
-  bool allDetected = true;
-  for (int i = 0; i < numMics; i++) {
-    if (!detected[i]) {
-      allDetected = false;
-      break;
-    }
-  }
-
   output = getAccelData();
-
-  if (allDetected) {
-    output += "_" + getMicData();
-    // Add a small delay to allow for processing and to avoid immediate re-triggering
-    delay(100);
-  }else{
-    output += + "_" + String(0) + "_" + String(0);
-  }
+  output += "_" + getMicData();
   Serial.println(output);
+
+  // Add a small delay to allow for processing and to avoid immediate re-triggering
+  delay(300);
 }
