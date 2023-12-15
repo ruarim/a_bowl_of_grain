@@ -6,7 +6,7 @@ basicMPU6050<> imu;
 const int micPins[] = { A0, A1, A2, A3 };
 // Number of microphones
 const int numMics = 4;
-int closestMic = 0;
+unsigned long closestMic = 0;
 // Threshold for sound detection
 const int threshold = 10;
 // Microphone amplitude
@@ -16,12 +16,20 @@ bool detected[numMics];
 String output;
 bool hasDetected = false;
 
-// Function to check the microphone, record the time of arrival and amplitude of impulse
+// Function to check the microphone, record the amplitude of impulse
 void checkMicrophone(int micPin, int index) {
   if (analogRead(micPin) > threshold) {
     detected[index] = true;
     micLevels[index] = analogRead(micPin);
   }
+}
+
+bool checkDetected(bool detected [numMics]){
+  for(int i = 0; i < numMics; i++){
+    if(detected[i]) return true;
+  }
+
+  return false;
 }
 
 int maxIndex(unsigned long arr[numMics]) {
@@ -38,9 +46,13 @@ int maxIndex(unsigned long arr[numMics]) {
 }
 
 String getMicData() {
-  String data = "";
+  bool hasDetected = checkDetected(detected);
+  if(!hasDetected) return "0_0";
   closestMic = maxIndex(micLevels);
-  data += String(micLevels[closestMic]) + "_" + String(closestMic + 1);
+  String level = String(micLevels[closestMic]);
+  String micOut = String(closestMic + 1);   //Increment index for easier use in max
+
+  String data = level + "_" + micOut;
 
   // Reset times and detected flags for the next detection
   for (int i = 0; i < numMics; i++) {
@@ -51,43 +63,17 @@ String getMicData() {
   return data;
 }
 
-bool checkDetected(bool detected [numMics]){
-  for(int i = 0; i < numMics; i++){
-    if(detected[i]) return true;
-  }
-
-  return false;
-}
-
 String getAccelData() {
   // Update gyro calibration
   imu.updateBias();
 
-  String out = "";
+  // Get X, Y, Z accel Values
+  String x = String(imu.ax());
+  String y = String(imu.ay());
+  String z = String(imu.az());
 
-  //-- Scaled and calibrated output:
-  // Accel
-  out = String(imu.ax()) + "_" + String(imu.ay()) + "_" + String(imu.az());
-  return out;
-}
-
-void debug() {
-  Serial.println("START OF DEBUG");
-
-  output = "Ref Mic: ";
-
-  Serial.println(output + String(closestMic));
-
-  output = "Level of ref mic ";
-
-  for (int i = 0; i < numMics; i++) {
-    output += " Level: " + String(micLevels[i]);
-    if (i != numMics - 1) output += "_";
-  }
-
-  Serial.println(output);
-
-  output = "Difference times ";
+  //return data
+  return x + "_" + y + "_" + z;
 }
 
 void setup() {
@@ -112,12 +98,20 @@ void loop() {
     checkMicrophone(micPins[i], i);
   }
 
-  output = getAccelData();
-  
-  hasDetected = checkDetected(detected);
-  if(hasDetected) output += "_" + getMicData();
-  else output += "_0_0";
+  output += getAccelData();
+  output += "_";
+  output += getMicData();
+
   Serial.println(output);
+
+  // Reset output
+  output = "";
+
+  // Reset times and detected flags for the next detection
+  for (int i = 0; i < numMics; i++) {
+    detected[i] = false;
+    micLevels[i] = 0;
+  }
 
   // Add a small delay to allow for processing and to avoid immediate re-triggering
   delay(100);
