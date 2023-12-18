@@ -1,0 +1,4 @@
+Juxtopposed - https://codepen.io/Juxtopposed/pen/xxQMyqQ
+basicMPU6050 - https://github.com/RCmags/basicMPU6050
+grainflow - https://github.com/composingcap/grainflow
+
