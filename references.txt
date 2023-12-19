@@ -1,4 +1,16 @@
-Juxtopposed - https://codepen.io/Juxtopposed/pen/xxQMyqQ
-basicMPU6050 - https://github.com/RCmags/basicMPU6050
-grainflow - https://github.com/composingcap/grainflow
+
+Librarys
+[1]basicMPU6050 - https://github.com/RCmags/basicMPU6050
+[2]grainflow - https://github.com/composingcap/grainflow
+
+Papers
+[3]S. O’Modhrain and G. Essl, ‘2004: PebbleBox and CrumbleBag: Tactile Interfaces for Granular Synthesis’, in A NIME Reader, vol. 3, A. R. Jensenius and M. J. Lyons, Eds., in Current Research in Systematic Musicology, vol. 3. , Cham: Springer International Publishing, 2017, pp. 165–180. doi: 10.1007/978-3-319-47214-0_11.
+[4]S. Zheng, ‘GrainPlane: Intuitive Tactile Interface for Granular Synthesis’, in Proceedings of the Audio Mostly 2016, Norrköping Sweden: ACM, Oct. 2016, pp. 34–38. doi: 10.1145/2986416.2986419.
+[5]A. Gadd and S. Fels, ‘MetaMuse: Metaphors for Expressive Instruments’, 2002.
+[6]C. Roads, Microsound, 1. paperback ed. Cambridge, Mass.: MIT Press, 2004.
+[7]P. Cook, ‘2001: Principles for Designing Computer Music Controllers’, in A NIME Reader, vol. 3, A. [8]R. Jensenius and M. J. Lyons, Eds., in Current Research in Systematic Musicology, vol. 3. , Cham: Springer International Publishing, 2017, pp. 1–13. doi: 10.1007/978-3-319-47214-0_1.
+
+
+Website starting point
+[9]Juxtopposed - https://codepen.io/Juxtopposed/pen/xxQMyqQ
 
