@@ -95,6 +95,7 @@ void setup() {
   // Initial calibration of gyro
   imu.setBias();
 
+  // Setup the analog pins, set detected false, set all mic amplitudes to 0
   for (int i = 0; i < numMics; i++) {
     detected[i] = false;
     pinMode(micPins[i], INPUT);
