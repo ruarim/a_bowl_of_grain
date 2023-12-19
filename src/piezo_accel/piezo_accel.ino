@@ -16,7 +16,7 @@ bool detected[numMics];
 String output;
 bool hasDetected = false;
 
-// Function to check the microphone, record the amplitude of impulse
+// Checks the microphone and records the amplitude of an impulse if > threshold
 void checkMicrophone(int micPin, int index) {
   if (analogRead(micPin) > threshold) {
     detected[index] = true;
@@ -24,6 +24,7 @@ void checkMicrophone(int micPin, int index) {
   }
 }
 
+// Checks if an any mic has detected an impulse
 bool checkDetected(bool detected [numMics]){
   for(int i = 0; i < numMics; i++){
     if(detected[i]) return true;
@@ -32,6 +33,7 @@ bool checkDetected(bool detected [numMics]){
   return false;
 }
 
+// Finds the index of the largest value in an array.
 int maxIndex(unsigned long arr[numMics]) {
   unsigned long max = arr[0];
   int index = 0;
@@ -45,13 +47,19 @@ int maxIndex(unsigned long arr[numMics]) {
   return index;
 }
 
+// Fetched data from the cloest contact mic to an impulse
 String getMicData() {
+  // Check if a mic has picked an impulse
   bool hasDetected = checkDetected(detected);
+  // If nothing is detected return nothing
   if(!hasDetected) return "0_0";
+  // Get the closest mic to the impulse
   closestMic = maxIndex(micLevels);
+  // Get the amplitude of the impulse
   String level = String(micLevels[closestMic]);
-  String micOut = String(closestMic + 1);   //Increment index for easier use in max
-
+  //Increment mic index for easier use in max
+  String micOut = String(closestMic + 1);
+  // Format the output string
   String data = level + "_" + micOut;
 
   // Reset times and detected flags for the next detection
@@ -60,6 +68,7 @@ String getMicData() {
     micLevels[i] = 0;
   }
 
+  //Return contact mic data
   return data;
 }
 
@@ -72,11 +81,12 @@ String getAccelData() {
   String y = String(imu.ay());
   String z = String(imu.az());
 
-  //return data
+  //Format and return accel data
   return x + "_" + y + "_" + z;
 }
 
 void setup() {
+  // Start serial connection
   Serial.begin(9600);
 
   // Set registers - Always required
@@ -98,6 +108,7 @@ void loop() {
     checkMicrophone(micPins[i], i);
   }
 
+  // Get data from the sensors
   output += getAccelData();
   output += "_";
   output += getMicData();
