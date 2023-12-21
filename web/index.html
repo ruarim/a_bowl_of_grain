@@ -35,7 +35,7 @@
       </h1>
     </div>
 
-    <div id="part1" class="flex row">
+    <div id="part1">
       <div class="part1-info flex column">
         <h2>CONTEXT, CONCEPT, AIMS</h2>
       </div>
@@ -69,12 +69,12 @@
           </p>
         </div>
         <div id="image-container" class="flex column">
-          <img style="width: 800px" src="images/inspiration.png" />
+          <img style="width: 600px" src="images/inspiration.png" />
         </div>
       </div>
     </div>
 
-    <div id="part1" class="flex row">
+    <div id="part1">
       <div class="part1-info flex column">
         <h2>DESIGN PROCESS, TECHNICAL AND CREATIVE DETAILS</h2>
       </div>
@@ -88,6 +88,9 @@
           x and y location of vibrations on a flat metal surface to granular
           synthesiser parameters.
         </p>
+        <div id="image-container" class="flex column">
+          <img style="width: 600px" src="images/grain_detection.png" />
+        </div>
         <br />
         <p>
           A metal bowl with attached contact mics was decided upon as an
@@ -103,18 +106,26 @@
           move the objects around, it seemed appropriate to use an accelerometer
           to add extra control dimensions.
         </p>
+        <div id="image-container" class="flex column">
+          <img style="width: 600px" src="images/mappings.png" />
+        </div>
         <br />
-        <p>The system is comprised of four parts.</p>
+        <p style="font-weight: bold; font-size: 30px">
+          The system is comprised of four parts.
+        </p>
         <br />
+        <p style="font-weight: bold">The Sensors</p>
         <p>
-          The Sensors
           <br />
           Four contact mics to detect vibrations, and an accelerometer to detect
           tilt were wired together and attached to the bottom of the bowl.
         </p>
+        <div id="image-container" class="flex column">
+          <img style="width: 400px" src="images/final_wiring.jpg" />
+        </div>
         <br />
+        <p style="font-weight: bold">The Arduino</p>
         <p>
-          The Arduino
           <br />
           Values from the sensors are read into the Arduino via the analogue
           pins and sampled at a set interval. The contact mic values are
@@ -128,10 +139,13 @@
           library. The amplitude level, microphone index and accelerometer x, y
           values are then output to the serial bus.
           <br />
-          <br />
         </p>
+        <div id="image-container" class="flex column">
+          <img style="width: 500px" src="images/main_arudino_code.png" />
+        </div>
+        <br />
+        <p style="font-weight: bold">The Granular synthesiser</p>
         <p>
-          The Granular synthesiser
           <br />
           A Max patch running a granular synthesiser implemented with the
           grainflow package is then used to read values from the serial port. A
@@ -146,8 +160,11 @@
           <br />
           <br />
         </p>
+        <div id="image-container" class="flex column">
+          <img style="width: 500px" src="images/granular_synth.png" />
+        </div>
+        <p style="font-weight: bold">Spatalisation</p>
         <p>
-          Spatalisation
           <br />
           In my instrument performance, a 24-channel ambisonics setup was used
           to spatialise the grains. Throughout the piece, 4 speakers were
@@ -156,10 +173,13 @@
           were grouped into front right, front left, back right, and back left.
           This was implemented in the same Max patch using the MC library.
         </p>
+        <div id="image-container" class="flex column">
+          <img style="width: 600px" src="images/spatalisation.png" />
+        </div>
       </div>
     </div>
 
-    <div id="part1" class="flex row">
+    <div id="part1">
       <div class="part1-info flex column">
         <h2>CRITICAL ANALYSIS</h2>
       </div>
@@ -205,8 +225,16 @@
           The spatialisation techniques used were relatively primitive and
           implemented using Max's built-in MC objects. Although they get the job
           done, I would like to explore an ambisonics implementation in the
-          future via ICRAMs spat software.
+          future via ICRAMs
+          <span
+            ><a href="https://forum.ircam.fr/projects/detail/spat/"
+              >spat software</a
+            ></span
+          >.
         </p>
+        <div id="image-container" class="flex column">
+          <img style="width: 400px" src="images/final_angleview.jpg" />
+        </div>
       </div>
     </div>
 
