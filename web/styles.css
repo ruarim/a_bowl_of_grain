@@ -82,7 +82,7 @@ body {
   }
   
   .part1-info {
-    width: 100%;
+    width: 30%;
     gap: 40px;
     padding: 1%;
   }
@@ -129,6 +129,12 @@ body {
     justify-content: flex-end !important;
     align-items: center !important;
     padding: 3px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* This creates two columns of equal width */
+    gap: 10px; /* Optional: adds space between columns */
   }
   
   a {
