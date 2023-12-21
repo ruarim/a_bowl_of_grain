@@ -70,8 +70,8 @@
             connection.
           </p>
         </div>
-        <div class="flex column" style="padding: 2px">
-          <img style="width: 1000px" src="images/inspiration.png" />
+        <div id="image-container" class="flex column">
+          <img style="width: 800px" src="images/inspiration.png" />
         </div>
       </div>
     </div>
@@ -86,10 +86,9 @@
         vibration on the surface of a resonant material and then using these
         vibrations to trigger grains of sound. Also, I wanted to provide
         multi-dimensional control of the grain via localising the vibration on
-        the surface. This idea was inspired by the GrainPlain, which maps
-        vibrations x y(cartesian) location on a flat metal surface to granular
+        the surface. This idea was inspired by the GrainPlain, which maps the x
+        and y location of vibrations on a flat metal surface to granular
         synthesiser parameters.
-
         <br />
         <br />
 
@@ -112,17 +111,18 @@
         The system is comprised of four parts.
         <br />
         <br />
-        The Sensors
+        -The Sensors
         <br />
-        Four contact mics and an accelerometer were wired together and attached
-        to the bottom of the bowl.
+        Four contact mics to detect vibrations, and an accelerometer to detect
+        tilt were wired together and attached to the bottom of the bowl.
         <br />
         <br />
-        The Arduino
+        -The Arduino
         <br />
-        The Arduino Values from the sensors are read into the Arduino via the
-        analogue pins. The contact mic closest to a vibration is found. The data
-        from the accelerometer is processed by the
+        Values from the sensors are read into the Arduino via the analogue pins
+        and sampled at a set interval. The contact mic values are processed, and
+        the closest mic to the vibration is found. The data from the
+        accelerometer is processed by the
         <span
           ><a href="https://github.com/RCmags/basicMPU6050" target="_blank"
             >basicMPU6050</a
@@ -132,7 +132,7 @@
         values are then output to the serial bus.
         <br />
         <br />
-        The Granular synthesiser
+        -The Granular synthesiser
         <br />
         A Max patch running a granular synthesiser implemented with the
         grainflow package is then used to read values from the serial port. A
@@ -145,14 +145,14 @@
         the grains, to be opened or closed by tilting the bowl forward or back.
         <br />
         <br />
-        Spatalisation
+        -Spatalisation
         <br />
         In my instrument performance, a 24-channel ambisonics setup was used to
         spatialise the grains. Throughout the piece, 4 speakers were constantly
         playing grains. Depending on which contact mic was closest to the
         vibration, another 5 speakers played grains. The 5 speakers were grouped
         into front right, front left, back right, and back left. This was
-        implemented in Max using the MC library.
+        implemented in the same Max patch using the MC library.
       </p>
       <p></p>
     </div>
@@ -163,33 +163,39 @@
         <p>Summary of this section</p>
       </div>
       <p>
-        This is where I provide critcal analysis of the outcome Lorem ipsum
-        dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Et malesuada fames ac
-        turpis egestas. Turpis cursus in hac habitasse. Convallis convallis
-        tellus id interdum velit laoreet id donec. Urna id volutpat lacus
-        laoreet non curabitur. At elementum eu facilisis sed odio morbi. Nisl
-        tincidunt eget nullam non nisi est sit amet. Tempus urna et pharetra
-        pharetra massa massa ultricies mi. Ipsum suspendisse ultrices gravida
-        dictum fusce ut placerat orci nulla. Diam quis enim lobortis scelerisque
-        fermentum dui faucibus in ornare. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-        et dolore magna aliqua. Et malesuada fames ac turpis egestas. Turpis
-        cursus in hac habitasse. Convallis convallis tellus id interdum velit
-        laoreet id donec. Urna id volutpat lacus laoreet non curabitur. At
-        elementum eu facilisis sed odio morbi. Nisl tincidunt eget nullam non
-        nisi est sit amet. Tempus urna et pharetra pharetra massa massa
-        ultricies mi. Ipsum suspendisse ultrices gravida dictum fusce ut
-        placerat orci nulla. Diam quis enim lobortis scelerisque fermentum dui
-        faucibus in ornare. Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Et malesuada fames ac turpis egestas. Turpis cursus in hac habitasse.
-        Convallis convallis tellus id interdum velit laoreet id donec. Urna id
-        volutpat lacus laoreet non curabitur. At elementum eu facilisis sed odio
-        morbi. Nisl tincidunt eget nullam non nisi est sit amet. Tempus urna et
-        pharetra pharetra massa massa ultricies mi. Ipsum suspendisse ultrices
-        gravida dictum fusce ut placerat orci nulla. Diam quis enim lobortis
-        scelerisque fermentum dui faucibus in ornare.
+        Overall, the outcome met the main goal of my design, which was to create
+        a direct physical connection to synthesised grains of sound. The bowl
+        form supports this idea nicely and provides intuitive control over the
+        grains via tilting the accelerometer. After showing the instrument to
+        friends, most agreed it was simple to pick up and use without
+        understanding of the Granular synthesis method.
+        <br />
+        <br />
+        Initially, I wanted to pinpoint the exact location of vibrations on the
+        bowl, although after reading many Arduino forum posts, this turned out
+        to be a very difficult task. This was primarily due to the bowl's small
+        size and rounded shape. To tackle this, I split the bowl into quarters
+        and localised the vibration to one of the areas in the bowl.
+        <br />
+        <br />
+        The gestures provided by the accelerometer worked well, although they
+        were relatively static. I would have liked to implement more complex
+        gestures, such as flicks and twists, that could provide more dynamic
+        control over the instrument's timbre. Making the instrument wireless via
+        a Wi-Fi-enabled chip and some Open Sound Control messages could also
+        enhance its gestural capabilities.
+        <br />
+        <br />
+        While completing this project, I gained a much better understanding of
+        how to wire up electronics. Setting up the sensors and reading their
+        data sheets has given me a good fundamental understanding of their
+        capabilities providing inspiration for future projects.
+        <br />
+        <br />
+        The spatialisation techniques used were relatively primitive and
+        implemented using Max's built-in MC objects. Although they get the job
+        done, I would like to explore an ambisonics implementation in the future
+        via ICRAMs spat software.
       </p>
     </div>
 
