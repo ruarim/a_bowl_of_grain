@@ -1,5 +1,8 @@
 # a_bowl_of_grain
-This project aims to provide a tactile multidimensional connection to the grains of sound created by granular synthesis. This synthesis technique is fundamentally about manipulating and processing tiny pieces of sound to create new textures and timbres. This is done by triggering grains when objects create vibrations on the surface of a metal bowl.
+This project aims to provide a tactile multidimensional connection to the grains of sound created by granular synthesis. This synthesis technique is fundamentally about manipulating and processing tiny pieces of sound to create new textures and timbres. 
+
+The instrument works by triggering grains of sound when objects create vibrations on the surface of a metal bowl. These grains can then be controlled by tilting the bowl left to right or forward to backward.
+
 
 ## Video demo [here](https://www.youtube.com/watch?v=I2vvDrNJBnQ)
 
