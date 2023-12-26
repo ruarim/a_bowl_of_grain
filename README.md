@@ -7,3 +7,6 @@ This project aims to provide a tactile multidimensional connection to the grains
 
 ## Hardware
 ![final_angleview](https://github.com/ruarim/a_bowl_of_grain/assets/48099261/761a7d4f-8975-45e6-99e1-6ea39b26289f)
+
+## Sensors
+![final_wiring](https://github.com/ruarim/a_bowl_of_grain/assets/48099261/b8f28f45-9c7c-4fb4-a86f-e18814d3e544)
